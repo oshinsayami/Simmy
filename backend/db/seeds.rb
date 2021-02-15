@@ -7,7 +7,18 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 require 'rest-client'
 
-get_products = RestClient.get 'http://makeup-api.herokuapp.com/api/v1/products'
-byebug
-p_arr = JSON.parse(p_arr)[""]
-Product.create()
+get_products = RestClient.get 'http://makeup-api.herokuapp.com/api/v1/products.json'
+product_arr = JSON.parse(get_products)
+product_arr.each do |product|
+    # byebug
+
+    Product.create(
+        name: product["name"],
+        price: product["price"],
+        image: product["image_link"],
+        product_official_link: product["product_link"],
+        product_type: product["product_type"],
+        color: product["product_colors"],
+        brand: product["brand"]
+    )
+end
