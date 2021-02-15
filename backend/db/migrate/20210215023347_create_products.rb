@@ -7,7 +7,7 @@ class CreateProducts < ActiveRecord::Migration[6.1]
       t.string :product_official_link
       t.string :product_type
       t.string :color
-      t.integer :brand_id
+      t.string :brand
 
       t.timestamps
     end

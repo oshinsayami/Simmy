@@ -10,13 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_02_15_023657) do
-
-  create_table "brands", force: :cascade do |t|
-    t.string "name"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
+ActiveRecord::Schema.define(version: 2021_02_15_023628) do
 
   create_table "carts", force: :cascade do |t|
     t.integer "quantity"
@@ -33,7 +27,7 @@ ActiveRecord::Schema.define(version: 2021_02_15_023657) do
     t.string "product_official_link"
     t.string "product_type"
     t.string "color"
-    t.integer "brand_id"
+    t.string "brand"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
