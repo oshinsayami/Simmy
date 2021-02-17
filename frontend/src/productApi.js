@@ -9,6 +9,7 @@ class ProductApi {
         .then(r => r.json())
         .then(json => {
             json["data"].forEach(element => {
+                // debugger
                 const i = new Product({ id: element.id, ...element.attributes })
                 i.attachToDom()
             })

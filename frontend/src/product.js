@@ -1,6 +1,6 @@
 class Product{
     static all = []
-    constructor({id, name, brand, price, image, product_official_link, product_type, color }) {
+    constructor({id, name, brand_name, price, image, product_official_link, category_id, color }) {
         this.name = name
         this.brand = brand
         this.price = price
@@ -21,7 +21,7 @@ class Product{
             <article class = "product">
                 <div data-id="${this.id}" class="img-container">
                     <img src="${this.image}" alt="product" class="product-img">
-                    <button class="bag-btn" data-id="${this.id}">
+                    <button onClick=addToCart(event) class="bag-btn" data-id="${this.id}">
                         <i class="fas fa-shopping-cart"></i>add to bag
                     </button>
                 </div>
@@ -34,6 +34,8 @@ class Product{
 
     attachToDom() {  
         list.appendChild(this.render())
+        const addToCartBtn = this.element.querySelector(".bag-btn")
+
     }
 
     // addToCart = (e) => {
