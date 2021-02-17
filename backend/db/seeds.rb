@@ -17,7 +17,7 @@ product_arr.each do |product|
         price: product["price"],
         image: product["image_link"],
         product_official_link: product["product_link"],
-        product_type: product["product_type"],
+        category_name: product["product_type"],
         color: product["product_colors"],
         brand: product["brand"]
     )
