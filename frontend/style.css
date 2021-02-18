@@ -191,7 +191,27 @@ body {
 /* --------------- End of Cart ---------------- */
 
 /* --------------- Products ---------------- */
+button {
+  background-color: white;
+  border-radius: 0px 5px 5px 0px;
+  border: 1px solid rgb(40, 160, 230);
+  color: rgb(40, 160, 230);
+  padding: 10px 20px;
+  text-align: center;
+  display: inline-block;
+  font-size: 16px;
+}
 
+.activated {
+  background-color: rgb(40, 160, 230);
+  border-radius: 0px 5px 5px 0px;
+  border: 1px solid;
+  color: white;
+}
+
+.btn:hover {
+  background-color: rgb(230, 240, 250);
+}
 .products {
   padding: 4rem 0;
 }

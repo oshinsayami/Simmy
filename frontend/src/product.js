@@ -1,19 +1,44 @@
 class Product{
     static all = []
-    constructor({id, name, brand_name, price, image, product_official_link, category_id, color }) {
+    static list = document.querySelector(".products-center")
+
+    constructor({id, name, brand, price, image, category_id}) {
         this.name = name
         this.brand = brand
         this.price = price
         this.image = image
         this.id = id
+        this.category_id = category_id
 
         this.element = document.createElement('div')
+        this.element.dataset["id"] = id
         this.element.id = `product-${id}`
 
         // const addToCartBtn = this.element.querySelector(".bag-btn")
         // addToCartBtn.addEventListener('click', this.addToCart) 
 
         Product.all.push(this)
+    }
+
+    static filterByCategory(filteredCategory) {
+        if (filteredCategory) {
+            const filteredProducts = Product.all.filter((product) => {
+                console.log("product:", product.category_id)
+                console.log("category:", filteredCategory.id)
+
+                return product.category_id === parseInt(filteredCategory.id)
+            })
+            // debugger
+            Product.list.innerHTML = ''
+            for (const product of filteredProducts) {
+                product.attachToDom()
+            }
+        } else {
+            Product.list.innerHTML = ''
+            for (const product of Product.all) {
+                product.attachToDom()
+            }
+        }
     }
 
     render() {
@@ -33,7 +58,7 @@ class Product{
     }
 
     attachToDom() {  
-        list.appendChild(this.render())
+        Product.list.appendChild(this.render())
         const addToCartBtn = this.element.querySelector(".bag-btn")
 
     }
