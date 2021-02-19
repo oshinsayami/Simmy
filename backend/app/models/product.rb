@@ -1,6 +1,5 @@
 class Product < ApplicationRecord
     belongs_to :category
-    belongs_to :cart
 
     def category_name=(category_name)
         if !category_name.blank?
