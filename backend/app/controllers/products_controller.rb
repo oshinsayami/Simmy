@@ -4,7 +4,4 @@ class ProductsController < ApplicationController
         render json: ProductSerializer.new(products)
     end
 
-    def show
-
-    end
 end

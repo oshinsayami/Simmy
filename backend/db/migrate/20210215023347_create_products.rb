@@ -9,6 +9,7 @@ class CreateProducts < ActiveRecord::Migration[6.1]
       t.string :color
       t.string :brand
       t.integer :category_id
+      t.integer :cart_id
 
       t.timestamps
     end
