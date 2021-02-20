@@ -5,29 +5,38 @@ class CartsController < ApplicationController
         render json: CartSerializer.new(carts)
     end
 
-    def create
-        cart = Cart.create(cart_params)
-        render json: cart, include: [:products]
+    def show 
+        cart = Cart.find_by(id: params[:id])
+        if cart 
+           
+            render json: cart(:include => {
+                user: {:only => [:name]},
+            }), except: [:created_at, :updated_at]
+        else
+            render json: {message: "Cart not found."}
+        end 
     end
 
-    def update
-        cart = Cart.find_or_create_by(params[:id])
-        cart.product_ids << params[:product_id]
+    def checkout
+        cart = Cart.find(params[:id])
+        cart.checkout = true 
         cart.save
-        # render json: CartSerializer.new(list)
-        # else
-        # render json: { errors: cart.errors.full_messages }
-        # end
-    end
+        user = cart.user 
+        
+        new_cart = Cart.create(user_id: user.id)
+        
+        render json: user, :include => {
+            carts: {
+                except: [:created_at, :updated_at], 
+                methods: :total, 
+                include: {
+                    cart_products:{ 
+                        include: :product
+                    }
+                },
+            },
+        }, except: [:created_at, :updated_at]
+    end 
 
-    # def show
-    #     cart = Cart.find_or_create_by(params[:id])
-    #     render json: cart
-    # end
-
-    private
-
-    def cart_params
-        params.require(:cart).permit(:id, :product_id)
-    end
+    
 end
