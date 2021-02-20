@@ -37,7 +37,6 @@ loginForm.addEventListener('submit', function (e) {
     .then(res => res.json())
     .then(function(object){
         loggedIn = object
-        localStorage.loggedIn = object.id
         renderLoggedInUser()
     })
         
@@ -156,6 +155,8 @@ function hideCart() {
 }
 
 logoutBtn.addEventListener('click', () => {
-    localStorage.clear(loggedIn)
     window.location.reload()
 })
+
+
+
