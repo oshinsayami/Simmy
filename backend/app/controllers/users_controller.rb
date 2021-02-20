@@ -38,6 +38,7 @@ class UsersController < ApplicationController
         }, except: [:created_at, :updated_at]
         else
             render json: {message: "User not found."}
+        end
     end
 
 end
