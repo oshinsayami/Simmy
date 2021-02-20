@@ -19,13 +19,9 @@ const cartBtn = document.querySelector(".cart-btn")
 const closeCartBtn = document.querySelector(".close-cart");
 
 let loggedIn = null 
-let signedUp = false
 
-function hideLoginForm() {
-    loginForm.style.display = 'none'
-}
-
-loginForm.addEventListener('submit', function(e){
+loginForm.addEventListener('submit', function (e) {
+    loginForm.style.display = "none"
     e.preventDefault()
     fetch(userURL, {
         method: "POST",
@@ -163,19 +159,3 @@ logoutBtn.addEventListener('click', () => {
     localStorage.clear(loggedIn)
     window.location.reload()
 })
-
-let checkForUser = function(){
-    if (localStorage.loggedIn) {
-        let id = localStorage.loggedIn
-        fetch(userURL + "/" + id)
-            .then(res => res.json())
-            .then(function (res) {
-                loggedIn = res
-                renderLoggedInUser()
-            })
-        hideLoginForm();
-    }else {
-        loginForm.style.display = "block"
-    }
-}
-
