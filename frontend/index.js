@@ -90,7 +90,7 @@ function handleClkPlus(event) {
             },
             body: JSON.stringify({
                 cart_id: cartId,
-                product_id: `${event.target.dataset.id}`
+                product_id: `${event.target.dataset.productId}`
 
             }),
         })
@@ -103,6 +103,7 @@ function handleClkPlus(event) {
 }
 
 removeFromCart = (event) => {
+    productsObj = {}
     let cartProduct = event.target.dataset.cartProductId
     fetch(cartProductURL + "/" + cartProduct, {
         method: "DELETE",
@@ -125,7 +126,7 @@ function checkout(event) {
     let currentCart = loggedIn.carts[loggedIn.carts.length - 1]
     if (currentCart.total > 0) {
         alert("Thank you for shopping.\n\nCome back soon!")
-        let cartId = event.target.dataset.id
+        let cartId = event.target.dataset.cartId
         fetch(port + "/checkout", {
             method: "POST",
             headers: {
