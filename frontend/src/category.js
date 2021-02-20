@@ -19,6 +19,7 @@ class Category {
     }
 
     addToDom() {
+        
         Category.categoryBar.append(this.render())
         this.addListeners()
     }

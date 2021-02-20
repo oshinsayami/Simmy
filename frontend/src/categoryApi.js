@@ -5,10 +5,12 @@ class CategoryApi {
     }
         
 
-    getCategories(){
+    getCategories() {
+        
         fetch(this.baseUrl)
         .then(r => r.json())
             .then(json => {
+                Category.categoryBar.innerHTML=''
                 json["data"].forEach(element => {
                     const b = new Category({ id: element.id, ...element.attributes })
                 b.addToDom()

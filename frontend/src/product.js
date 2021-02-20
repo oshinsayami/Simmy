@@ -38,6 +38,7 @@ class Product {
     
 
     render() {
+        
         this.element.innerHTML = `
             <article class = "product">
                 <div data-id="${this.id}" class="img-container">
@@ -57,6 +58,7 @@ class Product {
     }
 
     attachToDom = () => {
+        
         Product.list.appendChild(this.render())
     }
     

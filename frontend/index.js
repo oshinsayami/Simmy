@@ -46,7 +46,7 @@ loginForm.addEventListener('submit', function(e){
         })
         
 })
-
+productsObj = {}
 function renderLoggedInUser(){
         let currentCart = loggedIn.carts[loggedIn.carts.length - 1]
         let welcome = document.querySelector('#welcome')
@@ -125,7 +125,7 @@ function checkout(event) {
     let currentCart = loggedIn.carts[loggedIn.carts.length - 1]
     if (currentCart.total > 0) {
         alert("Thank you for shopping.\n\nCome back soon!")
-        let cartId = event.target.dataset.cartId
+        let cartId = event.target.dataset.id
         fetch(port + "/checkout", {
             method: "POST",
             headers: {
