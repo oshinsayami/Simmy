@@ -35,10 +35,7 @@ class Product {
         }
     }
 
-    
-
     render() {
-        
         this.element.innerHTML = `
             <article class = "product">
                 <div data-id="${this.id}" class="img-container">
@@ -51,14 +48,12 @@ class Product {
                 <h4>$${this.price}</h4>
             </article>
         `
-        // const elements = this.element.querySelector(".bag-btn")
         this.element.querySelector(".bag-btn").addEventListener('click', this.handleClk)
     
         return this.element
     }
 
     attachToDom = () => {
-        
         Product.list.appendChild(this.render())
     }
     
@@ -77,12 +72,11 @@ class Product {
 
             }),
         })
-            .then(res => res.json())
-            .then(json => {
-                loggedIn = json
-                renderLoggedInUser()
-            })
-            
+        .then(res => res.json())
+        .then(json => {
+            loggedIn = json
+            renderLoggedInUser()
+        }) 
     }
 
     

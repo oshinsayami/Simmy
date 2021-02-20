@@ -1,12 +1,9 @@
 class ProductApi {
-
     constructor(port){  
         this.baseUrl = `${port}/products`
     } 
 
     getProducts() {
-        
-        
         fetch(this.baseUrl)
         .then(r => r.json())
             .then(json => {

@@ -19,7 +19,6 @@ class Category {
     }
 
     addToDom() {
-        
         Category.categoryBar.append(this.render())
         this.addListeners()
     }
@@ -39,7 +38,6 @@ class Category {
                 c.element.classList.remove('activated')
                 c.active = false
             }
-
             Product.filterByCategory(filteredCategory)
         }) 
     }

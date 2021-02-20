@@ -1,12 +1,10 @@
 class CategoryApi {
-
     constructor(port){
         this.baseUrl = `${port}/categories`
     }
         
 
     getCategories() {
-        
         fetch(this.baseUrl)
         .then(r => r.json())
             .then(json => {
