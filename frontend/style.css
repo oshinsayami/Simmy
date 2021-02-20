@@ -93,6 +93,7 @@ body {
 }
 /* --------------- End of Hero ---------------- */
 
+
 /* --------------- Cart ---------------- */
 .cart-overlay {
   position: fixed;
@@ -105,7 +106,18 @@ body {
   background: rgb(240, 157, 81, 0.5);
   z-index: 2;
   visibility: hidden;
+} 
+.category-bar {
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 1.5rem;
+  text-align: center;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
 }
+
 .cart {
   position: fixed;
   top: 0;
@@ -194,8 +206,8 @@ body {
 button {
   background-color: white;
   border-radius: 0px 5px 5px 0px;
-  border: 1px solid rgb(40, 160, 230);
-  color: rgb(40, 160, 230);
+  border: 1px solid var(--primaryColor);
+  /* color: var(--primaryColor); */
   padding: 10px 20px;
   text-align: center;
   display: inline-block;
@@ -203,7 +215,7 @@ button {
 }
 
 .activated {
-  background-color: rgb(40, 160, 230);
+  background-color: var(--primaryColor);
   border-radius: 0px 5px 5px 0px;
   border: 1px solid;
   color: white;
