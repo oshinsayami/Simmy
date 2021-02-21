@@ -47,6 +47,10 @@ body {
   position: relative;
   cursor: pointer;
 }
+
+.logout-btn {
+  cursor: pointer;
+}
 .cart-items {
   position: absolute;
   top: -8px;
@@ -180,10 +184,7 @@ body {
 .item-amount {
   text-align: center;
 }
-.remove-item {
-  color: grey;
-  cursor: pointer;
-}
+
 .fa-chevron-up,
 .fa-chevron-down {
   color: var(--primaryColor);
