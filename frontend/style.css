@@ -281,6 +281,14 @@ button {
     height: 52px;
     width: 147px;
 }
+
+#welcome {
+font-size: 31px;
+display: flex;
+padding: 0 1.5rem;
+
+}
+
 .img-container:hover .product-img {
   opacity: 0.5;
 }
@@ -366,7 +374,6 @@ input {
   padding-bottom: 1.25em;
   color: #111010;
 
-  /* &:focus {
-    outline: none;
-  } */
 }
+
+
