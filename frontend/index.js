@@ -7,6 +7,7 @@ const cartProductURL = `${port}/cart_products`
 
 const cartContent = document.querySelector(".cart-content")
 const cartOverlay = document.querySelector(".cart-overlay");
+const cartFoot = document.querySelector(".cart-footer")
 const cartDOM = document.querySelector(".cart");
 const list = document.querySelector(".products-center")
 const addIcon = "https://cdn2.iconfinder.com/data/icons/bwpx/icons/symbol_addition.gif"
@@ -64,9 +65,9 @@ function renderLoggedInUser(){
         <img src=${addIcon} onClick=handleClkPlus(event) data-cart-product-id="${cart_product.id}" data-product-id="${cart_product.product.id}"> <strong>${cart_product.product.name}</strong> x ${productsObj[name].length} - $${total} </p></div>
         `
     }
-    cartContent.innerHTML += `
-        <p> <strong>Total Price:</strong> $${currentCart.total}</p>
-        <button class="checkout" onClick=checkout(event) data-cart-id="${currentCart.id}"> Checkout </button></p>
+        cartFoot.innerHTML = `
+            <h3>your total: $${currentCart.total.toFixed(2)}</h3>
+            <button class="clear-cart banner-btn" onClick=checkout(event) data-cart-id="${currentCart.id}"> Checkout </button></p>
         `
 
     productApi.getProducts()

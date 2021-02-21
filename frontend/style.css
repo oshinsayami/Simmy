@@ -243,6 +243,7 @@ button {
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   grid-column-gap: 1.5rem;
   grid-row-gap: 2rem;
+  /* padding: 0 1.5rem; */
 }
 .img-container {
   position: relative;
@@ -317,7 +318,7 @@ min-width: 320px;
 max-width: 475px;
 background: #fff;
 position: absolute;
-top: 637px;
+top: 700px;
 left: 50%;
 -webkit-transform: translate(-50%, -50%);
 -moz-transform: translate(-50%, -50%);
