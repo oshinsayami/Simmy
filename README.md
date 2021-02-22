@@ -5,8 +5,10 @@ This app was developed as a portfolio project for Flatiron School's Online Softw
 ## Installation
 * Clone this repo
 * ```cd``` into the backend directory
-* Run bundle
-* Run rails s
+* ```bundle``` to install the required gems
+* ```rails db:migrate``` to create the tables
+* ```rails db:seed``` to get all the data
+* ```rails s``` to start the server
 * ```cd``` into the frontend directory and use ```open index.html``` to run the frontend
 * To explore the Rails API, open your browser to localhost:3000/products
 
