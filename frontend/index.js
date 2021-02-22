@@ -43,6 +43,7 @@ loginForm.addEventListener('submit', function (e) {
         
 })
 
+
 function renderLoggedInUser(){
     let currentCart = loggedIn.carts[loggedIn.carts.length - 1]
     let welcome = document.querySelector('#welcome')

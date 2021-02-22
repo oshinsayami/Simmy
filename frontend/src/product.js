@@ -77,17 +77,7 @@ class Product {
             loggedIn = json
             renderLoggedInUser()
         }) 
-    }
-
-    
-    
-    
-    
-    
-
-    
-     
-
+    }  
 }
 
 
