@@ -2,6 +2,11 @@
 Simmy is a SPA (Single Page Application) where you can login, add makeup items to your cart and checkout.
 This app was developed as a portfolio project for Flatiron School's Online Software Engineering Program.
 
+Blog on the project: https://mdrsimran.medium.com/single-page-application-online-makeup-shop-7dcb2045c073
+
+Here is the link to the demo of the project: https://www.youtube.com/watch?v=OR_DcSfDAxY
+
+
 ## Installation
 * Clone this repo
 * ```cd``` into the backend directory
